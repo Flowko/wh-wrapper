@@ -1,6 +1,6 @@
 import path from "path";
 import { existsSync, mkdirSync, writeFileSync, promises as fsPromises, constants as fsConstants } from "fs";
-import Client from "../client/client";
+import { Client } from "../client/client";
 import { BaseHandler } from "./base-handler";
 import type { MessageType, MessageValueType } from "../types/whatsapp-types";
 import type {

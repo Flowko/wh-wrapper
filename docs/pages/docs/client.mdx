@@ -11,7 +11,7 @@ The `Client` class is the main entry point for interacting with the WhatsApp Clo
 If you don't need to handle incoming messages or updates via a webhook, you can initialize the `Client` instance with just the `phoneID` and `token`:
 
 ```js
-import Client from "wh-wrapper";
+import { Client } from "wh-wrapper";
 
 const wh = new Client(phoneID, token);
 ```
@@ -24,7 +24,7 @@ If you don't have a `phoneID` or `token`, or if you haven't set up an account wi
 If you want to receive incoming messages and updates via a webhook, you need to provide a `verifyToken` along with the `phoneID` and `token`:
 
 ```js
-import Client from "wh-wrapper";
+import { Client } from "wh-wrapper";
 
 const wh = new Client(phoneID, token, verifyToken);
 ```
@@ -417,7 +417,7 @@ Sends a contact to a WhatsApp recipient.
 
 ```js
 wh.sendContact(
-  to: string, 
+  to: string,
   name: string | object,
   phone: string | object | Array<object>,
   options?: object
@@ -749,7 +749,7 @@ wh.getBusinessProfile(): Promise<WhatsAppProfileData>
 **Parameters:**
 
 None.
- 
+
 **Returns:**
 
 A `Promise` that resolves with an object containing the business profile data. The returned object has the following properties:

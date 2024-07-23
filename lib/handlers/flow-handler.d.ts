@@ -1,4 +1,4 @@
-import Client from "../client/client";
+import { Client } from "../client/client";
 import { Context } from "../types/exports-types";
 import { BaseHandler } from "./base-handler";
 export default class FlowCompletion extends BaseHandler {

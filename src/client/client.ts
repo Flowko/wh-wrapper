@@ -57,7 +57,7 @@ type MessageHandlers = {
  * @extends EventEmitter
  * @classdesc The main class for interacting with the WhatsApp Cloud API.
  */
-export default class Client extends EventEmitter {
+export class Client extends EventEmitter {
     private _untypedOn = this.on;
     public on = <K extends keyof MessageHandlers>(event: K, listener: MessageHandlers[K]): this =>
         this._untypedOn(event, listener);
@@ -629,8 +629,7 @@ export default class Client extends EventEmitter {
                                           type: "button",
                                           sub_type: "url",
                                           index: i,
-                                          text: p.title,
-                                          url: p.url,
+                                          parameters: [{ type: 'url', url: p.url }, { type: "text", text: p.title }],
                                       };
                                   case "PhoneNumberButton":
                                       return {
@@ -640,6 +639,13 @@ export default class Client extends EventEmitter {
                                           text: p.title,
                                           phone_number: p.phoneNumber,
                                       };
+                                  case "CopyCodeButton":
+                                      return {
+                                          type: "button",
+                                          sub_type: "copy_code",
+                                          index: i,
+                                          parameters: [{ type: "payload", payload: p.example }],
+                                      };
                                   default:
                                       return [];
                               }
@@ -648,6 +654,8 @@ export default class Client extends EventEmitter {
                 ].filter(Boolean),
             },
         };
+
+        console.log(JSON.stringify(templateObjsct, null, 2));
 
         return ((await this._sendMessage(templateObjsct)) as SendMessageResponse).messages[0].id;
     }

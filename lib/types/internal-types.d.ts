@@ -1,4 +1,4 @@
-import Client from "../client/client";
+import { Client } from "../client/client";
 import { WhatsAppProfileVertical } from "./shared";
 import { C } from "ts-toolbelt";
 import { MesaageTypes, MessageValueType } from "./whatsapp-types";

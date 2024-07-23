@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import sinon from "sinon";
 import express from "express";
-import Client from "../lib/index";
+import { Client } from "../lib/index";
 import { ClientOptions } from "../lib/types/shared";
 import dotenv from "dotenv";
 import { ParametersError } from "../lib/errors/error-classes";

@@ -33,7 +33,7 @@ Inside your project directory, run the following:
 To start using the wh-wrapper library, you need to initialize a new WhatsApp client instance.
 
 ```js
-import Client from "wh-wrapper";
+import { Client } from "wh-wrapper";
 
 const wh = new Client(phoneID, token);
 ```
@@ -44,7 +44,7 @@ If you don't have a `phoneID` or `token`, or if you haven't set up an account wi
 If you want to receive incoming messages via the WhatsApp webhook, you can initialize the client with a verifyToken parameter.
 
 ```js
-import Client from "wh-wrapper";
+import { Client } from "wh-wrapper";
 
 const wh = new Client(phoneID, token, verifyToken);
 ```

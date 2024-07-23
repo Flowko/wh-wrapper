@@ -1,5 +1,5 @@
 import * as z from "zod";
-import Client from "../client/client";
+import { Client } from "../client/client";
 import { SendContacOptionSchema, SendTemplateSchema, nameSchema, phoneSchema, sendMediaInteractiveSchema, sendMessageOptionsSchema } from "../schemas/schema";
 import { FromUser, Metadata } from "../types/exports-types";
 import { MessageValueType } from "../types/whatsapp-types";

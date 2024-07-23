@@ -16,7 +16,7 @@ type MessageHandlers = {
     chatOpened: (chat: RequestWelcome) => void;
     flowCompletion: (flow: FlowCompletion) => void;
 };
-export default class Client extends EventEmitter {
+export declare class Client extends EventEmitter {
     private readonly phoneID;
     private readonly token;
     private readonly verifyToken?;

@@ -1,5 +1,5 @@
 import * as z from "zod";
-import Client from "../client/client";
+import { Client } from "../client/client";
 import {
     SendContacOptionSchema,
     SendTemplateSchema,

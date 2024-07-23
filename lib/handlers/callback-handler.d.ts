@@ -1,4 +1,4 @@
-import Client from "../client/client";
+import { Client } from "../client/client";
 import { Context } from "../types/exports-types";
 import { MessageValueType } from "../types/whatsapp-types";
 import { BaseHandler } from "./base-handler";

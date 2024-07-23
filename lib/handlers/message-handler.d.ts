@@ -1,4 +1,4 @@
-import Client from "../client/client";
+import { Client } from "../client/client";
 import { BaseHandler } from "./base-handler";
 import type { MessageType, MessageValueType } from "../types/whatsapp-types";
 import type { Image, Sticker, Video, Document, Audio, Location, Reaction, Error, Context, Media } from "../types/exports-types";
