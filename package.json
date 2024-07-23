@@ -1,6 +1,6 @@
 {
     "name": "@flowko/wh-wrapper",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "JavaScript wrapper for the WhatsApp Cloud API",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
