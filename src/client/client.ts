@@ -63,10 +63,6 @@ export default class Client extends EventEmitter {
         this._untypedOn(event, listener);
 
     url;
-    private phoneID: string | number;
-    private token: string;
-    private verifyToken?: string;
-    private options: Partial<ClientOptions>;
     axiosInstance;
     commonKeys = { messaging_product: "whatsapp", recipient_type: "individual" };
     /**
@@ -86,24 +82,12 @@ export default class Client extends EventEmitter {
      * @param {number} [options.port] - The port to listen on for the webhook server.
      */
     constructor(
-        {
-            phoneID,
-            token,
-            verifyToken,
-            options = {},
-        }: {
-            phoneID: string | number,
-        token: string,
-        verifyToken?: string,
-        options: Partial<ClientOptions>
-        }
+        private readonly phoneID: string | number,
+        private readonly token: string,
+        private readonly verifyToken?: string,
+        private options: Partial<ClientOptions> = {}
     ) {
         super();
-
-        this.phoneID = phoneID;
-        this.token = token;
-        this.verifyToken = verifyToken;
-        this.options = options;
 
         if (!this.phoneID || !this.token) throw new Error("Missing Parameters, phoneID and token are required");
 
