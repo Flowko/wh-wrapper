@@ -1,6 +1,6 @@
 {
     "name": "@flowko/wh-wrapper",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "JavaScript wrapper for the WhatsApp Cloud API",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -12,7 +12,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Flowko/wh-wrapper.git"
+        "url": "git+https://github.com/Flowko/wh-wrapper.git"
     },
     "bugs": {
         "url": "https://github.com/Flowko/wh-wrapper/issues"
