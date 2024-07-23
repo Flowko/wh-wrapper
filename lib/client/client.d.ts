@@ -17,19 +17,24 @@ type MessageHandlers = {
     flowCompletion: (flow: FlowCompletion) => void;
 };
 export default class Client extends EventEmitter {
-    private readonly phoneID;
-    private readonly token;
-    private readonly verifyToken?;
-    private options;
     private _untypedOn;
     on: <K extends keyof MessageHandlers>(event: K, listener: MessageHandlers[K]) => this;
     url: string;
+    private phoneID;
+    private token;
+    private verifyToken?;
+    private options;
     axiosInstance: import("axios").AxiosInstance;
     commonKeys: {
         messaging_product: string;
         recipient_type: string;
     };
-    constructor(phoneID: string | number, token: string, verifyToken?: string | undefined, options?: Partial<ClientOptions>);
+    constructor({ phoneID, token, verifyToken, options, }: {
+        phoneID: string | number;
+        token: string;
+        verifyToken?: string;
+        options: Partial<ClientOptions>;
+    });
     _setCallBackUrl(callbackUrl: string, appID: string, appSecret: string): Promise<{
         success: boolean;
     }>;

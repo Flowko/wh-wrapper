@@ -5,7 +5,3 @@ import Update from "./handlers/update-handler";
 import RequestWelcome from "./handlers/request-welcome-handler";
 export default Client;
 export { Message, Update, Callback, RequestWelcome };
-
-const client = new Client("", "", "");
-
-client.on("messages", (msg) => {});
